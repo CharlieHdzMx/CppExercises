@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void printArray(const unsigned short aSize, int* a)
+{
+    for(unsigned int i=0; i<aSize;++i)
+        cout<<a[i]<<"\t";
+    cout<<endl;
+}
+
+bool compareArrays(const int* a, const int* b,const int size){
+    for(unsigned short i=0; i<size; ++i)
+        if(a[i]!=b[i])
+            return false;
+    return true;
+}
+
+int main(int argc, char *argv[])
+{
+//    Exercise 3.35: Using pointers, write a program to set the elements in an
+//    array to zero.
+    constexpr unsigned short aSize=10;
+    int a[aSize]={1,2,3,4,5,6,7,8,9,10};
+
+//    printArray(aSize, a);
+//    for(unsigned int i=0; i<aSize;++i)
+//        a[i]=0;
+
+//    printArray(aSize, a);
+
+//    Exercise 3.36: Write a program to compare two arrays for equality. Write a
+//    similar program to compare two vectors.
+
+    int sameA[aSize]={1,2,3,4,5,6,7,8,9,10};
+    int notSameA[aSize]={10,9,8,7,6,5,4,3,2,1};
+
+    cout<<"Comparation of same equality arrays result:"<<compareArrays(a,sameA,aSize)<<endl;
+    cout<<"Comparation of not equality arrays result:"<<compareArrays(a,notSameA,aSize)<<endl;
+
+    vector<int> v1={1,2,3,4,5,6,7,8,9,10};
+    vector<int> v2={1,2,3,4,5,6,7,8,9,10};
+    vector<int> v3={0,0,3,4,5,6,7,8,9,10};
+
+    cout<<"Comparation of same equality vectors result:"<<(v1==v2)<<endl;
+    cout<<"Comparation of not equality vectors result:"<<(v1==v3)<<endl;
+
+    return 0;
+}

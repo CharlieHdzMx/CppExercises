@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+//    Exercise 4.28: Write a program to print the size of each of the built-in
+//   types.
+    //void
+    cout<<sizeof(nullptr_t)<<endl;
+
+    //bool
+    cout<<sizeof(bool)<<endl;
+
+    //char
+    cout<<sizeof(char)<<endl;
+    cout<<sizeof(wchar_t)<<endl;
+    cout<<sizeof(char16_t)<<endl;
+    cout<<sizeof(char32_t)<<endl;
+
+    //integer
+    cout<<"Integers"<<endl;
+    cout<<sizeof(short)<<endl;
+    cout<<sizeof(int)<<endl;
+    cout<<sizeof(long)<<endl;
+    cout<<sizeof(long long)<<endl;
+
+    cout<<"Floating"<<endl;
+    cout<<sizeof(float)<<endl;
+    cout<<sizeof(double)<<endl;
+    cout<<sizeof(long double)<<endl;
+
+    cout<<"Fixed width integers"<<endl;
+    cout <<  sizeof(int8_t) <<  endl;
+    cout <<  sizeof(uint8_t) <<  endl;
+    cout <<  sizeof(int16_t) << endl;
+    cout <<  sizeof(uint16_t) <<  endl;
+    cout <<  sizeof(int32_t) <<  endl;
+    cout <<  sizeof(uint32_t) <<  endl;
+    cout <<  sizeof(int64_t) <<  endl;
+    cout <<  sizeof(uint64_t) <<  endl;
+    return 0;
+}

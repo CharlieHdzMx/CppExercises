@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+template<typename T>
+bool isPrefix(const vector<T>& lhs, const vector<T>& rhs){
+
+    if(lhs.size() > rhs.size())
+        return isPrefix(rhs,lhs);
+    for(size_t i=0; i<lhs.size();++i){
+        if(lhs.at(i)!=rhs.at(i))
+            return false;
+    }
+    return true;
+}
+
+int main(int argc, char *argv[])
+{/*
+    Exercise 5.17: Given two vectors of ints, write a program to determine
+    whether one vector is a prefix of the other. For vectors of unequal
+    length, compare the number of elements of the smaller vector. For
+    example, given the vectors containing 0, 1, 1, and 2 and 0, 1, 1, 2, 3, 5,
+    8, respectively your program should return true*/
+
+    vector<int> v={0,1,1};
+    vector<int> v2={0,1,1,2,3,5,8};
+
+    cout<<"Is v prefix of v2? "<<isPrefix(v,v2)<<endl;
+
+    return 0;
+}

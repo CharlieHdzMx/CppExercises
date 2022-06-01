@@ -1,0 +1,30 @@
+#include <iostream>
+/*
+Exercises Section 2.3.2
+
+ Exercise 2.18: Write code to change the value of a pointer. Write code to
+change the value to which the pointer points.
+
+*/
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    //Change the value of the pointer
+    int* p=nullptr;
+    int a=12;
+    int* in=&a;
+
+    cout<<"Changing the value of the pointer \n "
+           ""<<endl;
+    p=in;
+    cout<<"Value of p:"<<p<<endl;
+
+    //Change the value to which the pointer points
+    cout<<"Which is the value that you want to change to i"<<endl;
+    cin>>a;
+
+    cout<<"Value of *p: "<<*p<<endl;
+
+    return 0;
+}

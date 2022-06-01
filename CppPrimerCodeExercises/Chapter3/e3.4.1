@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <iterator>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+//    Exercise 3.21: Redo the first exercise from § 3.3.3 (p. 105) using iterators.
+//    vector<int> v{1,2,3,4,5,6,7,8,9};
+
+//    for(auto it=v.begin(); it != v.end();++it)
+//        *it*=*it;
+
+//    for(auto i: v){
+//        cout<<i<<endl;
+//    }
+
+//    Exercise 3.22: Revise the loop that printed the first paragraph in text to
+//   instead change the elements in text that correspond to the first paragraph
+//   to all uppercase. After you’ve updated text, print its contents.
+
+    string s;
+    vector<string> note;
+
+    while(getline(cin,s)){
+        if(s=="q")
+            break;
+        note.push_back(s);
+    }
+
+    for(auto& c: note.at(0))
+        c=toupper(c);
+
+    for(auto st: note)
+        cout<<st<<endl;
+
+    return 0;
+}

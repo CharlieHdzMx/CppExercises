@@ -1,0 +1,98 @@
+#include <iostream>
+
+using namespace std;
+
+bool isVowel(const char& c){
+    if((c=='a') || (c=='A') || (c=='e') || (c=='E') || (c=='i') || (c=='I') ||
+            (c=='o') || (c=='O') || (c=='u') || (c=='U'))
+        return true;
+    return false;
+}
+
+void vowelCount(unsigned& iCnt, unsigned& twochCnt, unsigned& aCnt, unsigned& eCnt,
+                unsigned& oCnt, unsigned& blankCnt, char& ch, char& preF, unsigned& uCnt)
+{
+    while (cin >> ch)
+        switch (ch)
+        {
+            case ' ':
+            case '\n':
+            case '\t':
+                ++blankCnt;
+                break;
+            case 'a':
+            case 'A':
+                ++aCnt;
+                break;
+            case 'e':
+            case 'E':
+                ++eCnt;
+                break;
+            case 'i':
+                if(preF=='f') ++twochCnt,preF='\0';
+            case 'I':
+                ++iCnt;
+                break;
+            case 'o':
+            case 'O':
+                ++oCnt;
+                break;
+            case 'u':
+            case 'U':
+                ++uCnt;
+                break;
+        case 'f':
+            if(preF=='f') ++twochCnt,preF='\0';
+            else preF='f';
+            break;
+        case 'l':
+            if(preF=='f') ++twochCnt,preF='\0';
+            break;
+        case 'q':
+        default:
+            return;
+        }
+}
+
+int main(int argc, char *argv[])
+{
+//    Exercise 5.9: Write a program using a series of if statements to count the
+//    number of vowels in text read from cin.
+//    unsigned int count=0;
+
+//    for(string text;getline(cin,text);){
+//        for(char c:text){
+//            if(isVowel(c))
+//                ++count;
+//        }
+//        cout<<"The number of vowels in the text is: "<<count<<endl;
+//        cout=0;
+//    }
+
+//    Exercise 5.10: There is one problem with our vowel-counting program as
+//    we’ve implemented it: It doesn’t count capital letters as vowels. Write a
+//    program that counts both lower- and uppercase letters as the appropriate
+//    vowel—that is, your program should count both 'a' and 'A' as part of
+//    aCnt, and so forth.
+
+//    Exercise 5.11: Modify our vowel-counting program so that it also counts the
+//    number of blank spaces, tabs, and newlines read.
+
+//     Exercise 5.12: Modify our vowel-counting program so that it counts the
+//    number of occurrences of the following two-character sequences: ff, fl,
+//    and fi.
+
+
+    unsigned aCnt = 0, eCnt = 0, iCnt = 0, oCnt = 0, uCnt = 0,blankCnt=0, twochCnt=0;
+    char ch,preF='\0';
+    vowelCount(iCnt, twochCnt, aCnt, eCnt, oCnt, blankCnt, ch, preF, uCnt);
+
+    cout << "Number of vowel a(A): \t" << aCnt << '\n'
+         << "Number of vowel e(E): \t" << eCnt << '\n'
+         << "Number of vowel i(I): \t" << iCnt << '\n'
+         << "Number of vowel o(O): \t" << oCnt << '\n'
+         << "Number of vowel u(U): \t" << uCnt << '\n'
+         <<"Number of ff, fl and fi: " << twochCnt<< endl;
+
+    return 0;
+}

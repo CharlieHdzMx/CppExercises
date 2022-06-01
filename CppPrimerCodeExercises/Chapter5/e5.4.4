@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+//    Exercise 5.19: Write a program that uses a do while loop to repetitively
+//    request two strings from the user and report which string is less than
+//    the other.
+
+    string str1,str2;
+    do{
+        if(!str1.empty() && !str2.empty()){
+            cout<<"This string is less than the other: "<<((str1<str2)?str1:str2)<<endl;
+            cout<<"Please, write the strings that you want to compare"<<endl;
+        }
+    }while(getline(cin,str1) && getline(cin,str2));
+
+    return 0;
+}

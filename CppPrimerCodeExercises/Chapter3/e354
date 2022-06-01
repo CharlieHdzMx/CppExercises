@@ -1,0 +1,64 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+
+using namespace std;
+
+bool compareCStrings(const char* pz1, const char* pz2){
+    while(*pz1){
+        if(*pz1 != *pz2)
+            return false;
+        ++pz1; ++pz2;
+    }
+    return true;
+}
+
+char* convertStringToCString(const string& s,char* pz){
+    for(char c:s){
+        *pz=c;
+        pz++;
+    }
+
+    return pz;
+}
+
+int main(int argc, char *argv[])
+{
+//    Exercise 3.39: Write a program to compare two strings. Now write a
+//   program to compare the values of two C-style character strings.
+//    string s1="Hello";
+//    string s2="Hello";
+//    string s3="world";
+
+//    cout<<"Comparation two equal strings: "<<(s1==s2)<<endl;
+//    cout<<"Comparation two not equal strings: "<<(s1==s3)<<endl;
+
+//    char* pz1="Hello world";
+//    char* pz2="Hello world";
+//    char* pz3="World Hello";
+
+//    cout<<"Comparation two equal C Strings"<<compareCStrings(pz1,pz2)<<endl;
+//    cout<<"Comparation two NOT equal C Strings"<<compareCStrings(pz1,pz3)<<endl;
+
+//    Exercise 3.40: Write a program to define two character arrays initialized
+//   from string literals. Now define a third character array to hold the
+//   concatenation of the two arrays. Use strcpy and strcat to copy the two
+//   arrays into the third.
+
+    string s1="Hello";
+    string s2="world";
+
+    char pz4[s1.size()];
+    char pz5[s2.size()];
+
+    convertStringToCString(s1,pz4);
+    convertStringToCString(s2,pz5);
+
+    char pz6[s1.size()+s2.size()];
+
+    strcpy(pz6,pz4);
+    strcat(pz6,pz5);
+
+
+    return 0;
+}

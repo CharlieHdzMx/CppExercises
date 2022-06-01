@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+//    Exercise 3.14: Write a program to read a sequence of ints from cin and
+//   store those values in a vector
+
+    int entry=0;
+    vector<int> v;
+    while(1){
+        cin>>entry;
+        if(entry==0)
+            break;
+        v.push_back(entry);
+    }
+
+    for(int i: v)
+        cout<<i<<endl;
+
+//    Exercise 3.15: Repeat the previous program but read strings this time.
+    string entryS;
+    vector<string> vS;
+
+    while(1){
+        getline(cin,entryS);
+        if(entryS=="q")
+            break;
+        vS.push_back(entryS);
+    }
+
+    for(string s: vS)
+        cout<<s<<endl;
+    return 0;
+}

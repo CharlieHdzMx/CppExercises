@@ -1,0 +1,148 @@
+#include <iostream>
+#include <string>
+
+using std::cout; using std::endl; using std::cin; using std::cerr;
+using std::string;
+struct Sales_data{
+  int bookNo;
+  int units_sold;
+  double revenue;
+};
+
+void processISBNtotalRevenue(Sales_data data1, Sales_data data2)
+{
+    unsigned totalCnt=data1.units_sold+data2.units_sold;
+    double totalRevenue=data1.revenue+data2.revenue;
+    cout<<data1.bookNo<<" "<<totalCnt<<" "<<totalRevenue<<" ";
+    if(totalCnt !=0)
+        cout<<totalRevenue/totalCnt<<endl;
+    else
+        cout<<"(no sales)"<<endl;
+}
+
+void getDataforRevenue(Sales_data data1, double price)
+{
+    cin>>data1.bookNo>>data1.units_sold>>price;
+}
+
+void getRevenue(double price, Sales_data data1)
+{
+    data1.revenue=data1.units_sold*price;
+}
+
+void getStrings(string s2, string s1)
+{
+    getline(cin,s1);
+    getline(cin,s2);
+}
+
+void determineStringSizeDifference(string s2, string s1)
+{
+    if(s1.size() == s2.size())
+        cout<<"Strings are equal"<<endl;
+    else
+        cout<<"String: "<<string((s1>s2)?s1:s2)<<" is the larger one"<<endl;
+}
+
+void compareStrings()
+{
+    cout<<"Reporting which string is larger or if they're same length"<<endl;
+    string s1,s2;
+    getStrings(s2, s1);
+
+    determineStringSizeDifference(s2, s1);
+}
+
+int main(int argc, char *argv[])
+{
+    /*
+     Exercise 3.1: Rewrite the exercises from § 1.4.1 (p. 13) and § 2.6.2 (p. 76)
+    with appropriate using declarations.
+    */
+//    int sum=0,val=-1;
+
+//    while(val<=10){
+//        sum+=val;
+//        ++val;
+//    }
+
+//    cout<<"Sum of 1 to 10 inclusive is"
+//       <<sum<<endl;
+
+//    //
+//    Sales_data data1,data2;
+
+//    double price=0;
+
+//    getDataforRevenue(data1, price);
+//    getRevenue(price, data1);
+
+//    if(data1.bookNo==data2.bookNo){
+//        processISBNtotalRevenue(data1, data2);
+//    }
+//    else{
+//        cerr<<"Data must refer to the same ISBN"<<endl;
+//        return -1;
+//    }
+
+    /*
+    Exercise 3.2: Write a program to read the standard input a line at a time.
+    Modify your program to read a word at a time.
+    */
+
+//    cout<<"Read the standard input a line at a time:"<<endl;
+//    string line;
+
+//    while(getline(cin,line)){
+//        if(line.size() >0)
+//            cout<<line<<endl;
+//        else
+//            break;
+//    }
+
+//    cout<<"Read the standard input per word"<<endl;
+//    string word;
+
+//    while(cin>>word){
+//        if(word == "q")
+//            break;
+//        cout<<word<<endl;
+//    }
+
+    /*
+     Exercise 3.4: Write a program to read two strings and report whether the
+    strings are equal. If not, report which of the two is larger. Now, change
+    the program to report whether the strings have the same length, and if
+    not, report which is longer.
+*/
+
+    //compareStrings();
+
+    /*
+    Exercise 3.5: Write a program to read strings from the standard input,
+    concatenating what is read into one large string. Print the concatenated
+    string. Next, change the program to separate adjacent input strings by a
+    space.
+    */
+
+    cout<<"Concatenating the strings"<<endl;
+    string s1;
+    getline(cin,s1);
+    string s2;
+    getline(cin,s2);
+
+    string s3=s1+" "+s2;
+
+    cout<<s3<<endl;
+
+    cout<<"Separating adjacent input strings by a space"<<endl;
+
+    for(unsigned int i=0; i<s3.size(); ++i){
+        if(s3.at(i) == ' ')
+            cout<<"\n";
+        else
+            cout<<s3.at(i);
+    }
+
+    return 0;
+}

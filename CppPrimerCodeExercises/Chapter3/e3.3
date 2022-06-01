@@ -1,0 +1,84 @@
+#include <iostream>
+#include <vector>
+#include <ctype.h>
+
+using namespace std;
+
+template <typename T>
+void promptVectorContent(const vector<T>& v){
+    if(v.size() <=0)
+        return;
+
+    for(auto t: v){
+        cout<<t<<endl;
+    }
+}
+
+int main(int argc, char *argv[])
+{
+//    Exercise 3.16: Write a program to print the size and contents of the
+//   vectors from exercise 3.13. Check whether your answers to that exercise
+//   were correct. If not, restudy § 3.3.1 (p. 97) until you understand why you
+//   were wrong.
+
+//    vector<int> v1;
+//    vector<int> v2(10);
+//    vector<int> v3(10,42);
+//    vector<int> v4{10};
+//    vector<int> v5{10,42};
+//    vector<string> v6{10};
+//    vector<string> v7{10,"hi"};
+
+//    promptVectorContent(v1);
+//    promptVectorContent(v2);
+//    promptVectorContent(v3);
+//    promptVectorContent(v4);
+//    promptVectorContent(v5);
+//    promptVectorContent(v6);
+//    promptVectorContent(v7);
+
+//    Exercise 3.17: Read a sequence of words from cin and store the values a
+//    vector. After you’ve read all the words, process the vector and change
+//    each word to uppercase. Print the transformed elements, eight words to a
+//    line.
+//    string word="";
+//    vector<string> vs;
+//    while(word != "q"){
+//        cin>>word;
+//        vs.push_back(word);
+//    }
+
+//    for(auto& w:vs)
+//        for(auto& c:w)
+//            if(isalpha(c))
+//                c=toupper(c);
+
+//    for(auto w:vs)
+//        cout<<w<<endl;
+
+//    Exercise 3.20: Read a set of integers into a vector. Print the sum of each
+//    pair of adjacent elements. Change your program so that it prints the sum of
+//    the first and last elements, followed by the sum of the second and second-to-
+//    last, and so on.
+
+    int in=1;
+    vector<int> v;
+
+    while(in>0){
+        cin>>in;
+        v.push_back(in);
+    }
+
+    //static_assert(v.size()!=0,"The vector has no elements in it");
+
+    for(unsigned int i=0;i<v.size()-1;++i){
+        cout<<v.at(i)+v.at(i+1)<<endl;
+    }
+
+    for(unsigned int i=0;i<v.size()/2;++i){
+        cout<<v.at(i)+v.at(v.size()-i-1)<<endl;
+    }
+
+
+    return 0;
+}

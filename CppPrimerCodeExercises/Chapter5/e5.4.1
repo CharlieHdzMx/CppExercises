@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+//    Exercise 5.14: Write a program to read strings from standard input
+//    looking for duplicated words. The program should find places in the input
+//    where one word is followed immediately by itself. Keep track of the largest
+//    number of times a single repetition occurs and which word is repeated. Print
+//    the maximum number of duplicates, or else print a message saying that no
+//    word was repeated. For example, if the input is
+//    how now now now brown cow cow
+
+//    the output should indicate that the word now occurred three times.
+
+    pair<string,int> max_duplicated;
+
+    int count=0;
+    for(string str,prestr; cin>>str;prestr=str){
+        if(str=="q")
+            break;
+        if(str==prestr) ++count;
+        else count=0;
+        if(count> max_duplicated.second) max_duplicated={prestr,count};
+    }
+
+    if(max_duplicated.first.empty()) cout<<"There's not duplicated string"<<endl;
+    else cout<<"the world"<<max_duplicated.first<<"ocurred"<<max_duplicated.second+1<<"times."<<endl;
+
+    return 0;
+}

@@ -1,0 +1,82 @@
+#include <iostream>
+#include <ctype.h>
+
+using namespace std;
+
+enum class TypeOfLoop {FOR,FORRANGE,WHILE};
+
+void iterateToChangeForRange(string& test)
+{
+    for(char& c: test){
+        c='X';
+    }
+}
+
+
+
+void iterateToChangeFor(string& test)
+{
+    for(unsigned int i=0; i<test.size();++i){
+        auto& c=test.at(i);
+        c='X';
+    }
+}
+
+void iterateToChangeWhile(string& test)
+{
+    unsigned int i=0;
+    while(i<test.size()){
+        auto& c=test.at(i);
+        c='X';
+        ++i;
+    }
+}
+
+void changeCharacterToX(TypeOfLoop typeofLoop)
+{
+    string test="This is a test to change thje characters to x using a for loop";
+
+    cout<<test<<endl;
+
+    if(typeofLoop==TypeOfLoop::FORRANGE)
+        iterateToChangeForRange(test);
+    else if(typeofLoop==TypeOfLoop::WHILE)
+        iterateToChangeWhile(test);
+    else if(typeofLoop==TypeOfLoop::FOR)
+        iterateToChangeFor(test);
+
+    cout<<test<<endl;
+}
+
+
+int main(int argc, char *argv[])
+{
+    /*
+    Exercise 3.6: Use a range for to change all the characters in a string to
+    X.
+    */
+
+//    string s;
+//    cout<<s[0]<<endl;
+
+//    changeCharacterToX(TypeOfLoop::FORRANGE);
+//    changeCharacterToX(TypeOfLoop::FOR);
+//    changeCharacterToX(TypeOfLoop::WHILE);
+
+    /*
+    Exercise 3.10: Write a program that reads a string of characters including
+    punctuation and writes what was read but with the punctuation removed.
+    */
+
+    cout<<"Removing the punctuation from a string"<<endl;
+    string input;
+    getline(cin,input);
+
+    for(unsigned int i=0; i<input.size();++i){
+        if(!ispunct(input.at(i)))
+            cout<<input.at(i);
+    }
+    cout<<endl;
+
+    return 0;
+}
