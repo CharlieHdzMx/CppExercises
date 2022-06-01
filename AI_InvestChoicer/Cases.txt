@@ -1,0 +1,455 @@
+Hotel en Italia 5 estrellas
+1500000
+5000000
+Descripcion: ¡Exito! Tu hotel es famoso y muy visitado.
+0.97
+Descripcion: ¡Felcidades! Has conseguido un hotel reconocido.
+0.8
+Descripcion: El cambio de administracion amerita una remodelacion.
+0.5
+Descripcion: El personal resulto ser de poca confianza
+0.2
+Descripcion: Terremoto local daño gravemente el edificio
+0.1
+Hotel en Canada 5 estrellas
+1300000
+4500000
+Descripcion: ¡Exito! Tu hotel esta en lugar muy visitado.
+0.97
+Descripcion: ¡Felcidades! Has conseguido un hotel reconocido.
+0.85
+Descripcion: El personal necesita capacitacion.
+0.6
+Descripcion: El cambio de administracion amerita una remodelacion.
+0.47
+Descripcion: Terremoto local daño gravemente el edificio
+0.1
+Hotel en la Ciudad de Mexico 4 estrellas
+875000
+2100000
+Descripcion: ¡Exito! Excelente combinacion entre ubicacion y precio.
+0.99
+Descripcion: ¡Felcidades! Los negocios en la zona te favorecen.
+0.85
+Descripcion: El personal necesita capacitacion.
+0.68
+Descripcion: El edificio es un poco antiguo, necesita reparaciones.
+0.42
+Descripcion: Hay un considerable indice de delincuencia en la zona.
+0.29
+Hotel en la Ciudad de Chicago 4 estrellas
+915000
+2200000
+Descripcion: ¡Exito! Excelente combinacion entre ubicacion y precio.
+0.99
+Descripcion: ¡Felcidades! Ubicacion centrica que favorece.
+0.87
+Descripcion: Este hotel tiene deudas pendientes con el fisco.
+0.62
+Descripcion: El edificio es un poco antiguo, necesita reparaciones.
+0.42
+Descripcion: Hay un considerable indice de delincuencia en la zona.
+0.29
+Hotel en Hawaii 5 estrellas
+1900000
+5600000
+Descripcion: ¡Exito! Tu hotel es famoso y muy visitado.
+0.99
+Descripcion: ¡Felcidades! Hawaii es un gran lugar turistico.
+0.87
+Descripcion: Es necesario promocionar el hotel.
+0.7
+Descripcion: El personal necesita capacitacion para un excelente servicio.
+0.34
+Descripcion: La actividad volcanica del lugar provoco la desgracia.
+0.19
+Franquicia de Black Coffee Gallery
+65000
+240000
+Descripcion: ¡Exito! Una ubicacion optima y nombre reconocido.
+0.97
+Descripcion: ¡Felcidades! Te has unido a una gran cadena de cafes.
+0.8
+Descripcion: Tener una franquicia no te conviene del todo.
+0.65
+Descripcion: El comercio ambulante te acecha.
+0.34
+Descripcion: Alto indice delictivo en la zona.
+0.17
+Pequeña cafeteria en el centro de Guadalajara
+79000
+285000
+Descripcion: ¡Exito! Tu cafe ha sido bien aceptado por la clientela.
+0.98
+Descripcion: ¡Felcidades! Ubicacion centrica que favorece.
+0.85
+Descripcion: Tener un local en el centro de la ciudad es costoso.
+0.62
+Descripcion: El comercio ambulante bloquea tu progreso.
+0.42
+Descripcion: Alto indice delictivo en la zona.
+0.17
+Pequeña cafeteria cercano a una preparatoria
+70000
+295000
+Descripcion: ¡Exito! Tu cafe ha sido bien aceptado por la clientela.
+0.99
+Descripcion: ¡Felcidades! Ubicacion ideal que favorece.
+0.87
+Descripcion: Dificultades legales por ser zona residencial.
+0.57
+Descripcion: La desconsideracion de los clientes te afecta.
+0.32
+Descripcion: Zona muy competida.
+0.17
+Cafeteria en plaza comercial
+95000
+327000
+Descripcion: ¡Exito! Tienes un cafe muy atractivo en una plaza comercial famosa.
+0.95
+Descripcion: ¡Felcidades! Ubicacion ideal que favorece.
+0.83
+Descripcion: El alto costo de la renta del local disminuye tu ganancia.
+0.66
+Descripcion: Poca promocion del negocio.
+0.42
+Descripcion: Zona muy competida.
+0.19
+Cafeteria en el aeropuerto
+104000
+330000
+Descripcion: ¡Exito! Tu cafe se ha vuelto indispensable para los viajeros.
+0.96
+Descripcion: ¡Felcidades! Alto flujo de clientes.
+0.85
+Descripcion: El alto costo de la renta del local disminuye tu ganancia.
+0.64
+Descripcion: La desconsideracion de los clientes te afecta.
+0.42
+Descripcion: Problemas legales referentes a permisos y licencias.
+0.17
+Restaurante de comida italiana
+345000
+560000
+Descripcion: ¡Exito! La comida italiana es muy buscada por estos lares.
+0.99
+Descripcion: ¡Felcidades! Tu restaurante ha sido bien aceptado.
+0.88
+Descripcion: Se ha publicado una mala critica en la prensa.
+0.69
+Descripcion: Hay mucha competencia en esta zona.
+0.45
+Descripcion: Los precios son muy altos para el mercado que de la zona.
+0.2
+Cocina economica en zona comercial
+180000
+345000
+Descripcion: ¡Exito! Tu cocina se ha vuelto muy popular.
+0.98
+Descripcion: ¡Felcidades! Los trabajadores de la zona prefieren tu comida.
+0.9
+Descripcion: Tu personal necesita capacitacion para mejorar el servicio.
+0.64
+Descripcion: Se presento un problema de plagas.
+0.42
+Descripcion: Alto indice delictivo en la zona.
+0.2
+Bar cercano a una preparatoria
+195000
+430000
+Descripcion: ¡Exito! Tu bar se ha vuelto muy popular.
+0.99
+Descripcion: ¡Felcidades! Te aclientaste con estudiantes.
+0.92
+Descripcion: Necesitas dar "incentivos" para operar.
+0.7
+Descripcion: Estas bajo la mira de la sociedad.
+0.47
+Descripcion: Ocurrio un incidente con menores de edad alcoholizados.
+0.1
+Bar en Chapultepec
+209000
+390000
+Descripcion: ¡Exito! Tu bar se ha vuelto muy popular.
+0.99
+Descripcion: ¡Felcidades! Tu bar es atractivo para los clientes.
+0.87
+Descripcion: Pagas una renta algo elevada.
+0.7
+Descripcion: Pagas una renta algo elevada en una zona muy competida.
+0.53
+Descripcion: Se detectaron anomalias con los permisos.
+0.2
+Restaurant-Bar en plaza comercial
+315000
+575000
+Descripcion: ¡Exito! Tu restaurante ha sido muy llamativo.
+0.99
+Descripcion: ¡Felcidades! Has escogido un buen restaurante.
+0.85
+Descripcion: Pagas una renta algo elevada.
+0.73
+Descripcion: Algo ha salido mal con el negocio.
+0.49
+Descripcion: Desastrozo incendio alcanzo tu restaurante.
+0.22
+Tienda de mascotas
+300000
+400000
+Descripcion: ¡Exito! Hay fanatismo por las mascotas en la zona.
+0.999
+Descripcion: ¡Felcidades! Tu tienda se acliento de forma solida.
+0.89
+Descripcion: Agregaron IVA a alimentos para mascotas.
+0.82
+Descripcion: Algo ha salido mal con el negocio.
+0.75
+Descripcion: Desastrozo incendio alcanzo tu tienda.
+0.27
+Gasolinera saliendo de la ciudad
+390000
+610000
+Descripcion: ¡Exito! La temporada vacacional te hace ganar mas.
+0.98
+Descripcion: ¡Felcidades! Excelnte punto estrategico.
+0.85
+Descripcion: Se han presentado problemas legales.
+0.77
+Descripcion: Tienes personal de poca confianza.
+0.68
+Descripcion: Desastrozo incendio alcanzo tu gasolinera.
+0.19
+Tienda de abarrotes en zona residencial
+69000
+150000
+Descripcion: ¡Exito! Los clientes prefieren comprar en tu tienda.
+0.98
+Descripcion: ¡Felcidades! El negocio deja una buena ganancia.
+0.87
+Descripcion: Hay mucha competencia en la zona.
+0.70
+Descripcion: Alto indice delictivo en la zona.
+0.58
+Descripcion: El temporal de lluvias provoco una inundacion y afecto tu tienda.
+0.25
+Puesto de raspados en el parque
+27000
+59000
+Descripcion: ¡Exito! Temporada de calor, ventas muy altas.
+0.99
+Descripcion: ¡Felcidades! Tu puesto esta bien ubicado.
+0.87
+Descripcion: Hay mucha competencia en la zona.
+0.70
+Descripcion: La temporada invernal no es optima para vender nieves raspadas.
+0.5
+Descripcion: Has sido victima de constantes asaltos.
+0.28
+Carrito para vender fruta picada
+22000
+55000
+Descripcion: ¡Exito! Un negocio saludable y con grandes ganancias.
+0.96
+Descripcion: ¡Felcidades! La constancia en tu trabajo trae ganancias para ti.
+0.84
+Descripcion: No es tan facil encontrar un lugar para vender fruta.
+0.61
+Descripcion: Te han solicitado permisos para vender en via publica.
+0.48
+Descripcion: Has sido victima de constantes asaltos.
+0.25
+Papeleria cercana a una escuela
+80000
+130000
+Descripcion: ¡Exito! Un negocio muy necesario para los estudiantes.
+0.97
+Descripcion: ¡Felcidades! Excelente estrategia para ubicar una papeleria.
+0.89
+Descripcion: Tu negocio va despacio pero seguro.
+0.68
+Descripcion: Se han presentado problemas legales.
+0.48
+Descripcion: Falsos estudiantes, delincuentes que atacaron tu negocio.
+0.2
+Franquicia de paleteria la Michoacana
+62000
+210000
+Descripcion: ¡Exito! Una ubicacion optima y nombre reconocido.
+0.96
+Descripcion: ¡Felcidades! Te has unido a una gran cadena de paleterias.
+0.83
+Descripcion: Tener una franquicia no te conviene del todo.
+0.61
+Descripcion: El comercio ambulante te acecha.
+0.36
+Descripcion: Incendio provocado por corto circuito consumio tu paleteria.
+0.16
+Agencia de automoviles Honda
+1345000
+4300000
+Descripcion: ¡Exito! Vendes una marca de coches muy buscada.
+0.94
+Descripcion: ¡Felcidades! El renombre de la marca beneficia tus ventas.
+0.86
+Descripcion: El negocio de los vehiculos esta muy reñido.
+0.56
+Descripcion: Se han presentado problemas legales.
+0.36
+Descripcion: Ha sido victima de un fraude.
+0.13
+Agencia de viajes online
+18000
+50000
+Descripcion: ¡Exito! En tiempos modernos las ventad en linea son bien remuneradas.
+0.95
+Descripcion: ¡Felcidades! Tu buena publicidad da buenos frutos.
+0.86
+Descripcion: Tu negocio va despacio pero seguro.
+0.5
+Descripcion: Es necesario hacer publicidad para darte a conocer.
+0.39
+Descripcion: Ha sido victima de hackers.
+0.23
+Jugeteria en plaza comercial
+280000
+587000
+Descripcion: ¡Exito! Justo a tiempo para navidad.
+0.96
+Descripcion: ¡Felcidades! Tu buena publicidad da buenos frutos.
+0.84
+Descripcion: Este negocio tiene sus alti-bajos.
+0.5
+Descripcion: Pagas una renta algo elevada..
+0.42
+Descripcion: Se presnto un huracan en la ciudad, y tu tienda fue saqueada.
+0.2
+Franquicia de pasteleria OK
+71000
+195000
+Descripcion: ¡Exito! A la gente de esta zona les encanta los pasteles.
+0.98
+Descripcion: ¡Felcidades! Te has unido a una gran cadena de pastelerias.
+0.84
+Descripcion: Tener una franquicia no te conviene del todo.
+0.61
+Descripcion: Necesitas personal que cocine mejores pasteles.
+0.47
+Descripcion: Ha sido victima de un fraude.
+0.21
+Franquicia OXXO
+50000
+89000
+Descripcion: ¡Exito! Una gran ubicacion para un oxxo.
+0.99
+Descripcion: ¡Felcidades! Te has unido a una gran cadena de mini supermercados.
+0.87
+Descripcion: Un negocio que va despacio pero seguro.
+0.73
+Descripcion: Tener una franquicia no te conviene del todo.
+0.6
+Descripcion: Has sido victima de constantes asaltos.
+0.25
+Rosticeria de pollo
+49000
+85000
+Descripcion: ¡Exito! Un buen pollo que los clientes gustan de consumir.
+0.99
+Descripcion: ¡Felcidades! Vendes una de las comidas rapidas mas famosas.
+0.89
+Descripcion: La renta del local es algo elevada.
+0.75
+Descripcion: Algo va mal en el negocio.
+0.64
+Descripcion: Fuga de gas ocasiono un grave incendio.
+0.23
+Centro de distribucion Telcel
+100000
+260000
+Descripcion: ¡Exito! El consumismo en celulares te hace ganar mucho.
+0.94
+Descripcion: ¡Felcidades! Te has unido a la cadena de telefonia celular mas grande (monopolio).
+0.85
+Descripcion: Este negocio tiene una competencia inmensa.
+0.71
+Descripcion: Algo va mal en el negocio.
+0.57
+Descripcion: Has sido victima de fraude.
+0.15
+Taller mecanico en la carretera
+164000
+290000
+Descripcion: ¡Exito! El servicio de grua y reparacion que ofreces es muy solicitado.
+0.99
+Descripcion: ¡Felcidades! El alto flujo vehicular trae cosigo bastantes clientes.
+0.87
+Descripcion: Un negocio simplemente estable.
+0.67
+Descripcion: Tu personal esta poco calificado.
+0.53
+Descripcion: Has sido victima de extorsiones.
+0.24
+Anuncio espectacular para publicidad
+15000
+30500
+Descripcion: ¡Exito! Una importante empresa ha contratado tu anuncio.
+1
+Descripcion: ¡Felcidades! Tu anuncio ha dado frutos.
+0.93
+Descripcion: Quiza tu espectacular no este bien posicionado.
+0.75
+Descripcion: Has tenido problemas legales en cuanto a permisos.
+0.5
+Descripcion: Fuertes vientos y un mal montaje del anuncio lo llevo a su fin.
+0.11
+Puesto de venta de jugo de frutas.
+15000
+30500
+Descripcion: ¡Exito! Jugos mañana y tarde, grandiosas ventas.
+1
+Descripcion: ¡Felcidades! Tus clientes son fieles a tus jugos.
+0.93
+Descripcion: Algo esta saliendo mal con el negocio.
+0.75
+Descripcion: Has obtenido mala reputacion por tu personal.
+0.5
+Descripcion: Tu puesto fue clausurado por supuestos casos de enfermedad.
+0.11
+Puesto de periodicos y revistas.
+15000
+30500
+Descripcion: ¡Exito! Has adquirido un fructifero puesto de revistas.
+1
+Descripcion: ¡Felcidades! La literatura del dia a dia se vende bien.
+0.93
+Descripcion: Un negocio lento pero seguro.
+0.75
+Descripcion: Has tenido problemas legales en cuanto a permisos.
+0.5
+Descripcion: Las acciones de los bandalos no perdonaron tu puesto.
+0.11
+Floreria cercana a un panteon
+56000
+94500
+Descripcion: ¡Exito! Tu floreria es preferida por mucha gente.
+0.97
+Descripcion: ¡Felcidades! Este es un negocio muy noble que te deja ganancia.
+0.89
+Descripcion: Un negocio lento pero seguro.
+0.77
+Descripcion: Hay mucha competencia en la zona.
+0.61
+Descripcion: Las acciones de los bandalos no perdonaron tu puesto.
+0.29
+Tienda de regalos en plaza comercial
+69000
+122000
+Descripcion: ¡Exito! Tu tienda ha tomado gran fama.
+0.97
+Descripcion: ¡Felcidades! Este es un negocio muy noble que te deja ganancia.
+0.89
+Descripcion: El alto costo de la renta del local disminuye tu ganancia.
+0.66
+Descripcion: Poca promocion del negocio.
+0.42
+Descripcion: Zona muy competida.
+0.19
