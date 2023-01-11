@@ -1,6 +1,9 @@
 # Exceptions
 ## Statements
 ### Try blocks and exceptions.
+
+https://www.geeksforgeeks.org/cpp-exception-handling-interview-questions-and-answers/?ref=rp
+
 * Normalmente usado cuando una parte del programa detecta un problema y no puede solucionarlo con la parte que detecta el problema.
     * **throw expression**, donde la parte que detecta la falla indica que encontro algo que no puede manejar.
     * **try blocks**, Un bloque de try inicia con un keyword de **try** y termina con clausuras de **catch**.
@@ -211,5 +214,57 @@ catch(Derived d) {
 }
 return 0;
 }
+```
 
 ```
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	try {
+		throw 10;
+	}
+	/* Este es por defecto, el programa pensara que no hay ningun otro catch y entrara a este automaticamente, asi este catch(...) debe de estar siempre al final.*/
+	catch (...) {
+		cout << "default exception \n";
+	}
+	catch (int param) {
+		cout << "integer exception \n";
+	}
+
+	return 0;
+}
+
+```
+* El catch(...) debe de ser el ultimo si no, no habra otro catch que va a poder entrar.
+
+
+```
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	try {
+		try {
+			throw 10;
+		}
+		catch (int n) {
+            /* Primero */
+			cout << "Inner Catch\n";
+			throw;
+		}
+	}
+	catch (int x) {
+        /* Segundo */
+		cout << "Outer Catch\n";
+	}
+	return 0;
+}
+
+```
+
+* Basado en el rethrowing, se puede anidar try clauses.
+
+* Catch() solamente pueden tener un argumento que es la clase de exception que se manejara.
