@@ -290,6 +290,64 @@
             * Esta funcion virtual permite el llamar la funcion especifica en tiempos de ejecucion cuando tienes un puntero de una clase base pero que puede ser una clase derivada con una funcion especifica que viene de la funcion virtual.
             * virtual = intended to be overrrided.
             * Una funcion nonvirtual no se espera que sea sobreescrita por clases derivadas y por ello para referenciar entre ellos necesitas el scope de la clase (Base::, por ejemplo), o depender del scope del objeto para la llamada de la funcion.
+```
+// C++ Program to demonstrate
+// the Virtual Function
+#include <iostream>
+using namespace std;
+
+// Declaring a Base class
+class GFG_Base {
+public:
+    // Funcion virtual que PUEDE ser sobreescrito y referenciado por un puntero de clase base.
+    virtual void display()
+    {
+        cout << "Called virtual Base Class function" <<
+                "\n\n";
+    }
+    // Funcion non virtual que puede ser sobreescrito pero dependera de su objeto que lo llama.
+    void print()
+    {
+        cout << "Called GFG_Base print function" <<
+                "\n\n";
+    }
+};
+
+// Declaring a Child Class
+class GFG_Child : public GFG_Base {
+public:
+    void display()
+    {
+        cout << "Called GFG_Child Display Function" <<
+                "\n\n";
+    }
+
+    void print()
+    {
+        cout << "Called GFG_Child print Function" <<
+                "\n\n";
+    }
+};
+
+// Driver code
+int main()
+{
+    // Create a reference of class GFG_Base
+    GFG_Base* base;
+
+    GFG_Child child;
+    /* Hacemos que el puntero de la clase base referencie al objeto derivado.*/
+    base = &child;
+
+    // El puntero base llama a la funcion virtual, pero como se forza la llamada de display de clase base
+    // entonces display sera Called virtual Base Class function.
+    base->GFG_Base::display();
+
+    // Como print es funcion no virtual, entonces dependera totalmente del objeto que lo llama. En este caso, base class-
+    base->print();
+}
+
+```
 
 # Function overloading
 * Cuando hay varias funciones con el mismo nombre pero con diferentes parametros, se le llamada function overloading.
