@@ -268,7 +268,7 @@ int main()
 * Basado en el rethrowing, se puede anidar try clauses.
 
 * Catch() solamente pueden tener un argumento que es la clase de exception que se manejara.
-* ### Assertions
+### Assertions
 * Asserts son statements usados para asumpciones de test de la logica.
 
 ``` cpp
