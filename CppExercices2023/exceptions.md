@@ -268,3 +268,14 @@ int main()
 * Basado en el rethrowing, se puede anidar try clauses.
 
 * Catch() solamente pueden tener un argumento que es la clase de exception que se manejara.
+* ### Assertions
+* Asserts son statements usados para asumpciones de test de la logica.
+
+``` cpp
+    void assert(int expression);
+```
+
+* Si la expresion evalua a cero, entonces la expression son mandados al error standard y el abort() es llamado.
+* Assertions no son parte del error handling (exceptions) porque ellos detienen la ejecucion en el statement especifico.
+    * Exception handling son usados en conditiones en tiempos de ejecucion y no detienen la ejecucion al menos que se llame terminate().
+
