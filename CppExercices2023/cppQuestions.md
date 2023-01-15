@@ -982,3 +982,660 @@ int main(int argc, char **argv)
     return 0;
 }
 ```
+
+* Cuales de los siguientes statements son validos acerca del uso de algoritmos de STL con STL containers?
+    * Algoritmos de STL son proveidos para operaciones comunmente realizadas en contenedores de STL.
+        * Ok
+    * Algoritmos de STL son usados con los contenedores de STL a travez de iteradores.
+        * Ok
+
+* Cuales de los siguientes statements describen correctamente excepciones de C++.
+    * Cuando una excepcion es thrown,  y hay mas de un handler de excepciones para este tipo de excepcion, el control es transferido para manejar al mas cercano punto de excepcion.
+        * True
+    * Cuando una excepcion es disparado, no se puede tirar mas.
+        * Falso.
+    * un try block puede ser declarado sin ningun bloque de catch.
+        * False
+    * Cuando una excepcion es disparada, todos los objetos dinamicamente creados son released y sus destructores son llamados.
+        * False
+    * Si hay multiples catch blocks, las excepciones que capturan no podrian venir de la misma herarquia de herencia.
+        * False
+* Cual de los siguientes declaraciones correctamente usa el overloading del operator << de cout para imprimir el contenido de un class user-defined de tipo Record?
+    * std::ostream& operator <<(std::ostrearas, Records);
+
+``` cpp
+#include <iostream>
+using namespace std;
+
+//add declaration here
+
+int main()
+{
+    Record myRecord;
+
+    // other code omitted
+    cout << myRecord << endl;
+}
+```
+
+* Cual de los siguientes son errores con el uso de la memoria dinamica en C++?
+    * Hay un intento de acceder a la memoria alojado en el heap despues de que se destruyera.
+        * True
+    * Allocation con un new operation debe de estar dentro de un try/catch
+        * Falso.
+    * Hay un intento de remover un objeto que ha sido declarado en el stack.
+        * True
+    * Debido a que el chequeo del puntero esta sobreescrito, la memoria alojada no puede ser accedido o liberado.
+        * Falso
+    * Hay un intento de alojar memoria deleted en el heap sin usar un puntero.
+        * Falso
+
+* Cual de los siguientes statements acerca de funciones virtuales en C++ son validos?
+    * Un miembro data puede ser accedido como virtual.
+        * False
+    * Una funcion estatica puede ser declarada virtual.
+        * Falso, funciones estaticas no pueden ser declaradas virtual.
+    * Una funcion virtual necesita ser declarada virtual solamente en la clase base y opcionalmente en las clases derivadas.
+        * True
+    * Un operator puede ser declarado como virtual.
+        * True
+    * Un funcion virtual puede ser declarada como virtual.
+        * False
+
+* Cual de los siguientes statements correctamente describe el uso de unrestricted union C++?
+    * Es permitido contener miembros de tipo de clase.
+        * True
+    * No es permitido contener miembros de un built-in type.
+        * False
+    * Tiene el keywork unrestricted  en el nombre de union.
+        * False
+    * Debe de contener un constructor.
+        * False
+    * Debe de definir un operador de asignacion
+        * False.
+* Cuales de las siguientes lineas de codigo de C++ son implementaciones validas para una funcion Penguin swim() definido abajo?
+
+``` cpp
+#include <iostream>
+using namespace std;
+
+class Animal {
+private:
+    int position;
+public:
+    Animal() { position = 0; }
+    void changePosition(int i) {
+        position += i;
+    }
+};
+
+class WalkingAnimal : virtual public Animal {
+public:
+    void move() { changePosition(2); }
+};
+
+class SwimmingAnimal : virtual public Animal {
+public:
+    void move() { changePosition(1); }
+};
+
+class Pengiun : public WalkingAnimal, public SwimmingAnimal {
+public:
+    void swim() {
+        // insert code here
+        SwimmingAnimal.move(); // NOk, Clase.funcion() no es un syntaxis correcto
+        SwimmingAnimal::move(); // Ok , scope::a funcion publica.
+        Animal::changePosition(2); //Ok
+        move(); // NOk, Cual move? Necesita scope
+        position += 2;
+    }
+    void walk() {}
+};
+
+int main(int argc, char **argv)
+{
+    return 0;
+}
+```
+
+* Dado un operator unario sobrecargado, cuales de los siguientes son opciones legales con respecto al numero de parametros para ser usados?
+    * Un parametro dummy, cuando el operador es de un tipo particular de incremento/decremento de una funcion miembro.
+        * True, para diferenciar entre postfijo y prefijo.
+    * Un parametro, cuando la funcion operador es de un tipo particular de incremento/decremento (no un miembro de la clase).
+        * False
+    * Cualquier numero de parametros,  cuando una funcion operador es free standing (no un miembro de la clase).
+    * No parametros, cuando la funcion operator es una funcion free standing( no un miembro de la clase)
+        * False, para no parametros requieres el objeto implicito this.
+    * No parametros, cuando la funcion de operator es miembro.
+        * True
+
+* Cuales de los siguientes statements son verdaderos acerca del uso de promise y future en el snippet de abajo. cuando solamente usamos la libreria de multithreading que es parte de la libreria standard de C++.
+    * Despues de la asignacion de un valor a y1 en Linea I, la funcion thread func1() puede asignar un nuevo valor al objeto promesa y el valor puede asignarse a variable y1 con otra llamada de get() como en Linea K.
+
+``` cpp
+#include <iostream>
+#include <future>
+using namespace std;
+
+int func1(std::future<int>& delayedParam)
+{
+    int x = delayedParam.get();     // Line A
+
+    // do other work here...
+
+    int y = function_potentially_throwing_exception();  // Line B
+
+    return y;                       // Line C
+}
+
+void func2(std::promise<int> &result, std::promise<bool> &done)
+{
+    // do other work here...
+
+    result.set_value(10);           // Line D
+    done.set_value(true);           // Line E
+
+    // could do other work here...
+}
+
+int main()
+{
+    //-----------------for func1----------------------------
+    std::promise<int>   promisedArgument;
+    std::future<int>    futureArgument = promisedArgument.get_future();
+
+    auto f = std::async(std::launch::async, func1,
+                        std::ref(futureArgument));  // Line F
+
+    promisedArgument.set_value(4);                  // Line G
+
+    try {
+        bool isValid = f.valid();                   // Line H
+        int yl = f.get();                           // Line I
+
+        isValid = f.valid();                        // Line J
+        int y2 = f.get();                           // Line K
+    }
+    catch (...) {
+    //...
+    }
+
+    //--------------for func2--------------
+    std::promise<int>       resultPromise;
+    std::promise<bool>      donePromise;
+
+    std::future<int>    resultFuture = resultPromise.get_future();
+    std::future<bool>   doneFuture = donePromise.get_future();
+
+    std::async(std::launch::async, func2,
+               std::ref(resultPromise), std::ref(donePromise) );    // Line L
+
+    bool done = doneFuture.get();           // Line M
+    int result_f2 = resultFuture.get();     // Line N
+
+    // do other things with result_f2 ...
+
+    return 0;
+}
+```
+
+* Cual de los siguientes identifica correctamente la salida de ejecucion del codigo C++ de abajo?
+    * Type of new_arg is not const / Type of new一arg is not const / Type of new_arg is not const
+
+``` cpp
+#include <iostream>
+using namespace std;
+
+template<class T>
+void stripConst( T arg ) {
+    typename std::remove_const<T>::type new_arg;
+
+    if (std::is_const< decltype(new_arg) >::value)
+        cout << "Type of new_arg is const" << endl;
+    else
+        cout << "Type of new_arg is not const" << endl;
+}
+
+int main(int argc, char **argv)
+{
+
+    /* El tipo siempre checa el new_arg que es un local variable que no cambia basado en la entrada.
+       Asi que siempre sera not const.*/
+    stripConst( "Blinkin" );
+    stripConst( 676 );
+    stripConst( 3.14 );
+
+    return 0;
+}
+```
+
+* Para las declaraciones de C++ de abajo, cuales son operadores validos?
+
+``` cpp
+#include <iostream>
+using namespace std;
+
+enum REG {stocks, bonds};
+enum LTC {swaps, swaptions};
+enum DRV {futures, options};
+
+REG team1;
+LTC team2;
+DRV team3;
+
+int main(int argc, char **argv)
+{
+    //    team2 = 1; // Al parecer no se puede asignar ints a valores enum.
+    //    team1 = stocks + 1;  // Al parecer no se puede asignar ints a valores enum.
+    //    team3 = options + futures; // No hay valor en el enum definido para esta suma .
+    /*  Correcto.*/
+    team1 = bonds;
+
+    //    team1 = futures; // Tipo no es de este enum.
+
+    return 0;
+}
+```
+
+* Un programador a decidido el guardar objetosde tipo user defined (una estructura) dentro de un unordered_set. Cual de los siguientes pasos deben de considerarse para que funcione apropiadamente?
+    * La estructura debe de tener un operator() para que los elementos puedan ser localizados en una coleccion.
+    * La estructura debe de crear una especializacion de std::hash para el tipo de user defined.
+    * La estrucrua debe de tener un operator == () en orden de ser soportado por esta coleccion.
+        * True, como es set, entonces tienes que ver si hay algun key que ya esta para no duplicarlo.
+    * La estructura debe de tener un constructor por default.
+    * La estructura debe de tener un operator<() asi que los elementos pueden ser guardados en un lugar correcto de la collecion.
+        * Falso, como es unordered, entonces no necesitas comparar cual es menor o mayor.
+
+* Dado el codigo de abajo, cuando se usa un regular expression library, cuales de los siguientes statements son verdaderos para la ejecucion de Linea 1?
+    * El element match [n] corresponde al caracter nth del match.
+    * El size() member del objeto match contiene el numero de matches encontrado en el target string.
+        * True.
+    * El elemento match [n] corresponde al nth match de la expresion del target string.
+        * True
+
+* Un requerimiento  especificado para un C++ class llamado Rotator llama un manejador exclusivo de un recurso critico. Ha sido decidido enforzar la exclusividad en parte para prevenir la clase de ser copiado. En adicion, la llamada de diseño para el uso del compilador genera un constructor por defecto. Cual de los siguientes pasos pueden ser implementados para seguir este requerimiento?
+    * Declarar un operator= y explicitamente deleted it.
+    * Declarar un default destructor y explicitamente deleted it.
+
+* Dado el C++ except de abajo, cuales son las siguientes tecnicas que pueden ser usados para asignar un puntero rw con puntero w.
+    * Const_cast.
+        * True
+    * Reinterpret_cast
+        * Falso, reintepretatred cast es bajo nivel de intepretacion de bits.
+
+
+``` cpp
+#include <iostream>
+using namespace std;
+
+class widget {};
+
+int main(int argc, char **argv)
+{
+    widget const *cw = new widget;
+    widget *w;
+
+/*
+    w = cw; // Assigning to 'widget *' from incompatible type 'const widget *'
+    w = reinterpret_cast< widget* >(cw); // Reinterpret_cast from 'const widget *' to 'widget *' casts away qualifiers
+    w = static_cast< widget* >(cw); // Static_cast from 'const widget *' to 'widget *', which are not related by inheritance, is not allowed
+*/
+    w = const_cast< widget* >(cw);
+
+    return 0;
+}
+```
+
+* Cuales de los siguientes son declaraciones correctas de un puntero y una asignacion de una funcion miembro de C++ avg en class MyClass?
+    * double (MyClass::*f)() = MyClass::avg;
+
+* Cual de los siguientes statements acerca de C++ son correctos?
+    * Va haber un error en linea B porque el puntero myPet no refiere a ningun objeto.
+
+``` cpp
+#include <memory>
+#include <iostream>
+using namespace std;
+
+class animal {
+    string name = "";
+public:
+    void setName(string n) { name = n; }
+    string getName(void) { return name; }
+};
+
+void process(animal *pet)
+{
+    //I already have a pet
+    unique_ptr<animal> myPet(new animal);   // Line A
+    myPet->setName("Fluffy");
+
+    // now you are getting a pet
+    unique_ptr<animal> yourPet;
+
+    // I'll give you my pet
+    yourPet = std::move(myPet);                  // Line D
+
+    // No puedes setear nombre ya que no tienes control.
+    myPet->setName ("Not Fluffy");          // Line B
+
+    // Tomar el control de nuevo
+    myPet.reset (pet);
+
+    // Es posible ahora ya que tienes ownership.
+    myPet->setName("New Fluffy");
+}
+
+int main ()
+{
+    // in main...
+
+    animal *stray = new animal;
+
+    stray->setName("Scratchy");
+    process (stray);
+    string name = stray->getName();         // Line X
+
+    // other code here
+
+    return 0;
+}
+```
+
+* En el siguiente codigo de C++, cual de los siguientes statements son correctamente identificados como Mon de un enum puede ser asignado a una variable var?
+
+
+``` cpp
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    enum DAY { Mon = 11, Tue = 12 };
+
+    enum DAY var = Mon;
+    DAY var = DAY::Mon;
+//    enum DAY var = dynamic_cast<enum DAY>(Mon); // 'enum DAY' is not a reference or pointer
+    enum DAY var = DAY::Mon;
+//    enum DAY var = DAY.Mon; // 'DAY' does not refer to a value
+
+    return 0;
+}
+```
+
+* Cual de los siguientes son statements correctos acerca del comportamiento del operador de dynamic_cast de C++?
+    * El operador dynamic_cast puede solamente ser aplicado a un puntero o referencia de un objeto polimorfico.
+        * False
+    * El operator dynamic_cast puiede ser aplicado a un puntero que retorna cero si la operacion falla.
+        * Correcto.
+    * El operator de dynamic_cast es un subset del comportamiento del reinterpret_cast?
+        * False
+    * Un dynamic_Cast dispara un throw error si la operacion falla
+        * False
+    * El dynamic_cast falla si se usa para upcasting?
+        * False
+
+* Un programa ha definido parcialmente una funcion template compliance con C++11, Al no saber cuales son los tipos de lhs y rhs, el coder no esta seguro de como especificar el valor de retorno de esta funcion? De que manera se puede programar?
+    * The coder must use auto as the return type and let the compiler determine what to replace it with, such as: auto myfunc (const T1 &lhs, const T2 &rhs) {return lhs + rhs;}
+        * True
+    * The coder must use the utility function decltype() to determine the return type, such as: decltype (lhs + rhs) myfunc (const T1 &lhs, const T2 &rhs) {return lhs + rhs;}
+        * True
+    * The coder must specify a single return type that will be returned from any instantiation of the template function.
+        * Falso
+    * The coder must use a combination of auto and decltype: auto myfunc (const T1 &lhs, const T2 &rhs) -> decltype (lhs+rhs) {return lhs + rhs;}
+        * Falso, mala syntaxis con el -> y el return al mismo tiempo.
+    * The coder must specify one of template parameter types as the return type, then ensure that the template function converts/casts its results to match that return type.
+        * True
+
+``` cpp
+#include <iostream>
+using namespace std;
+
+template<class T1, class T2>
+// RETURN-TYPE-HERE myfunc(const T1 &lhs, const T2 &rhs) {return lhs + rhs;}
+// auto myfunc (const T1 &lhs, const T2 &rhs) {return lhs + rhs;} // 'auto' return without trailing return type; deduced return types are a C++14 extension
+
+// decltype(lhs + rhs) myfunc (const T1 &lhs, const T2 &rhs) {return lhs + rhs;} // Use of undeclared identifier 'rhs'
+
+auto myfunc(const T1 &lhs, const T2 &rhs)->decltype(lhs+rhs) {return lhs + rhs;}
+
+int main ()
+{
+    return 0;
+}
+```
+
+* Cuales de los siguientes NO son segmentos validos de codigo cuando son insertados en un programa de C++ (opciones para un punto de insercion dado no son mutualmente exclusivos)?
+    * **1** : std::unordered_map<std::string, int> colorCommands = {{"red", 3}, {"yellow", 2}, {"green", 1}};
+        * Este es correcto
+    * **1** : std::unordered_map<std::string, int> colorCommands; colorCommands["red”] = 3; colorCommands["yellow"] = 2; colorCommands["green"] = 1;
+        * Este NO es correcto
+    * **1** : std::unordered_map<std::string, int> colorCommands; colorCommands.insert(std::make_pair("red", 3)); colorCommands.insert({ "yellow", 2 }); colorCommands.emplace("green", 1);
+        * Este es correcto
+    * **2** : switch(colorCommands.find(color))
+        * Este NO es correcto
+    * **2** : switch (colorCommands[color])
+        * Este es correcto.
+
+``` cpp
+#include <iostream>
+#include <unordered_map>
+
+std::string checkTheLight() {
+    return "green";
+}
+
+int main ()
+{
+    enum colors {green, yellow, red};
+
+    /**1**/
+    std::unordered_map<std::string, int> colorCommands = {{"red", 3}, {"yellow", 2}, {"green", 1}};
+/*
+    std::unordered_map<std::string, int> colorCommands;
+    colorCommands["red"] = 3;
+    colorCommands["yellow"] = 2;
+    colorCommands["green"] = 1;
+
+    std::unordered_map<std::string, int> colorCommands;
+    colorCommands.insert(std::make_pair("red", 3));
+    colorCommands.insert({ "yellow", 2 });
+    colorCommands.emplace("green", 1);
+*/
+    std::string color = checkTheLight();
+
+    /**2**/
+//    switch (colorCommands.find(color)) // Statement requires expression of integer type ('iterator' (aka '__hash_map_iterator<__hash_iterator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, int>, void *> *> >') invalid)
+
+    switch (colorCommands[color])
+    {
+    case green:
+        std::cout << "get going";
+        break;
+    case yellow:
+        std::cout << "slow down";
+        break;
+    case red:
+    default:
+        std::cout << "stop";
+        break;
+    }
+
+    std::cout << std::endl;
+
+    return 0;
+}
+```
+
+* Un programador desea construir un nuevo tipo, basado en is_floating_point<T> en la libreria standard de C++11. Este nuevo trait no solamente validara tipos de punto flotante built-in, sino complex::<T>, parametrizado con los mismos tipos. CUal de los siguientes declaraciones cumplen con esto?
+    * template< class T > struct is_complex_or_fp< std::complex< T > > std::is_floating_point< T > { };
+    * template< class T > struct is_complex_or_fp : std::is_floating_point< T > { static constexpr bool value{true}; };
+        * Ok
+    * template< class T > struct is_complex_or_fp : std::ia_floating_point< T > { }; template< class T > struct is_complex_or_fp< T > : std::is_floating_point< std::complex< T > > { };
+    * template< class T > struct is_complex_or_fp : std::is_floating_point< T > { }；template< class T > struct is_complex_or_fp< std::complex< T > > : std::is_floating_point< T > { };
+        * Ok
+    * template< class T > struct is_complex_or_fp< T > : std::is_floating_point< std::complex< T > > { };
+
+
+``` cpp
+#include <iostream>
+#include <complex>
+
+/*
+template< class T >
+struct is_complex_or_fp< std::complex< T > > std::is_floating_point< T > { }; // Explicit specialization of non-template struct 'is_complex_or_fp'
+*/
+
+/* type struc is_complex es template*/
+template< class T >
+struct is_complex_or_fp : std::is_floating_point< T > { static constexpr bool value{true}; };
+
+
+/*
+template< class T >
+struct is_complex_or_fp : std::is_floating_point< T > { };
+
+template< class T >
+struct is_complex_or_fp< T > : std::is_floating_point< std::complex< T > > { }; // Class template partial specialization does not specialize any template argument; to define the primary template, remove the template argument list
+ */
+
+
+template< class T >
+struct is_complex_or_fp : std::is_floating_point< T > { };
+
+template< class T >
+struct is_complex_or_fp< std::complex< T > > : std::is_floating_point< T > { };
+
+
+/*
+template< class T >
+struct is_complex_or_fp< T > : std::is_floating_point< std::complex< T > > { }; // Explicit specialization of non-template struct 'is_complex_or_fp'
+*/
+
+int main ()
+{
+    return 0;
+}
+```
+
+* Cual de los siguientes statements son verdaderos con respecto al codigo de C++?
+    * El constructor de Course(double d) puede que no llame otro constructor como Course(int a).
+        * Falso
+    * El constructor por defecto resulta en un objeto con todos los miembros si inicializar.
+        * Falso, las variables ya estan inicializadas.
+    * El constructor por defecto resulta en un objeto con todos los miembros de datos inicializados con los valores mostrados en la definicion de la clase.
+        * True
+    * El uso de braces para la instancia de la clase de objetos course1,course2, course 3 y course4 no son sintaxis validos en C++
+        * Falso, este uso es valido.
+    * Miembro de datos estatico no debe de inicializarse en la definicion de la clase como se muestra
+        * True, el dato estatico se tiene que inicializar afuera de la clase.
+
+``` cpp
+#include <iostream>
+
+class Course {
+    static int  classCount = 0; // Non-const static data member must be initialized out of line
+    std::string courseName {"CS101"};
+    int         room = 100;
+    int quizzes[5] {0, 0, 0, 0, 0};
+
+public:
+    Course( ) {};
+    Course(int a) : room(a) {}
+    Course (std::string b) : courseName(b), room(200) {}
+    Course(double d) : Course( static_cast<int>(d) ) {}
+};
+
+int main ()
+{
+    Course course1{};
+    Course course2{300};
+    Course course3{"EnglishlOl"};
+    Course course4{3.14};
+
+    return 0;
+}
+```
+
+* Cual de los siguientes cambios deben de ser realizados en el codigo de C++ de abajo para que la definicion de la clase Wdiget sea const-correct para su uso en main()?
+    * Change Widget(Widget& w); to Widget(const Widget& w);
+        * Ok
+    * Change Gizmo (int p, int r) ; to Gizmo (const int p, const int r);
+        * NOk
+    * Change Widget& operator=(Widget& rhs); to Widget& operator=(const Widget& rhs);
+        * NOk
+    * Change Widget (Gizmo& g) ; to Widget (const Gizmo& g);
+        * Ok
+    * Use const_cast during assignment otherWidget = basicWidget;
+        * NOk
+
+
+``` cpp
+#include <iostream>
+
+struct Gizmo {
+    int pressure, rpm;
+    Gizmo(int p, int r) : pressure(p), rpm(r) {}
+//    Gizmo(const int p, const int r) : pressure(p), rpm(r) {}
+};
+
+struct Widget {
+    int temp, speed;
+    Widget() : temp (68), speed(100) {}
+
+//    Widget(Widget& w);
+    Widget(const Widget& w); //ok
+
+    Widget& operator=(Widget& rhs);
+//    Widget& operator=(const Widget& rhs);
+
+//    Widget(Gizmo& g);
+    Widget(const Gizmo& g);
+};
+
+int main(int argc, char **argv)
+{
+    const Widget prototype;
+
+    Widget basicWidget = prototype; // No matching constructor for initialization of 'Widget'
+
+    Widget otherWidget;
+    otherWidget = basicWidget;
+
+    const Gizmo gadget(10, 100);
+
+    Widget thirdWidget(gadget); // No matching constructor for initialization of 'Widget'
+
+    return 1;
+}
+```
+
+* Cual de las siguientes acciones son requeridas para lograr las especificaciones de la clase C++ que contendra alguna funcionalidad helper de proposito especial con los requerimientos de abajo?
+   1) The functionality is used by more than one public member function in a given class.
+   2) The functionality accesses private data members of the class.
+   3) The functionality must be a separate function.
+   4) The functionality must be available to derived classes but not available to users of the derived directly.
+
+    * Put the functionality in a member function and make its access level private.
+        * Nok
+    * Put the functionality in a friend function of the given class.
+        * Ok
+    * Put the functionality in a member function and make its access level protected.
+        * Ok
+    * Put the functionality in a separate class and inherit from that class.
+        * Ok
+    * Put the functionality in a global function that is called by the class.
+        * Nok
+
+* En la clase Box de C++, el operator == esta sobrecargado en la que los boxes del mismo volumen son considerados iguales. Dado que 2 boxes de este tipo (llamados box1 y box2) comparison 1 y 2 deben de realizarse. Que se puede usar para implementar el tercero (comparison 3) mostrado abajo.
+
+    * Implement a member operator== taking a Box and a double.
+        * False, operator== debe de tener solamente el double y ese ya esta implementado.
+    * Implement a global function called operator== which takes a double and a Box and makes it a friend of class Box.
+        * Correcto
+    * Modify one of the existing member operator== implementations so that it takes an additional parameter.
+        * False
+    * The existing overloaded operators already handle the 3rd comparison.
+        * False
+    * Implement a global functino called operator== which takes a double and a Box and have it call an existing member operator== implementation with conforming parameters.
+        * False
