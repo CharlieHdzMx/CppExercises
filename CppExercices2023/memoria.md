@@ -6,3 +6,5 @@
             * 0xbfa493e0
         * alignas(1024) int b[4]; printf("%p", b);
             * 0xbfa49000
+  * unique_ptr<>::reset destruye un objeto actualmente manejado por un unique_ptr (si hay alguno) y toma ownership de p.
+
