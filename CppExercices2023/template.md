@@ -90,5 +90,8 @@ int main()
 * Lvalues son referencias u objetos que pueden ser usados para copiar, la referencia es T&
 * Rvalues son costantes u objetos con doble referencia para move, T&&.
 
+* std::forward  sirve para indicar al compilador a usar rvalue en vez de deducir un lvalue por defecto cuando tienes 2 template overloaded functions.
+    * Rvalue entonces puede mover (en vez de copiar) un elemento de un contenedor optimamente.
+
 
 
