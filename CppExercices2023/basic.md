@@ -14,4 +14,4 @@ Pueden ser usado en unions, structs, classes, enum y typedefs.
 
 ## mutable
 * mutable
-    * permite la modificacion de un miembro
+    * permite la modificacion de un miembro clase declarado mutable aun cuando el objeto contenedor es declarado const.
