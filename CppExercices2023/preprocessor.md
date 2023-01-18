@@ -179,3 +179,67 @@ int main() {
                              // suppresses the trailing comma
 }
 ```
+* Cual es el output de esto?
+    * 5, porque por defecto, el X es definido como cero aun cuando no esta definido.
+``` cpp
+#include <stdio.h>
+#if X == 3
+    #define Y 3
+#else
+    #define Y 5
+#endif
+
+int main()
+{
+    printf("%d", Y);
+    return 0;
+}
+```
+
+* Cual es la salida de este codigo?
+    * No puedes definir funciones funciones entre macros.
+``` cpp
+#include <stdio.h>
+#define X 3
+#if !X
+    printf("Geeks");
+#else
+    printf("Quiz");
+
+#endif
+int main()
+{
+        return 0;
+}
+```
+
+* Cual es la salida de este?
+    * 36 porque no tiene parentesis entre los parametros y se pasa tal cual quedando 36/6*6.
+``` cpp
+#include <stdio.h>
+#define square(x) x*x
+int main()
+{
+  int x;
+  x = 36/square(6);
+  printf("%d", x);
+  return 0;
+}
+```
+
+* Despues de preprocesamiento se crea el archivo .i
+
+* Pragma once indica al compilador que el header solamente se incluye una sola vez.
+
+* Cual es el siguiente output?
+    * Error de compilacion porque el MAX de int MAX es convertido como 1000 antes de que el compilador cheque la sintaxis, asi que queda como 1000 = 100;
+``` cpp
+#include <stdio.h>
+#define MAX 1000
+int main()
+{
+   int MAX = 100;
+   printf("%d ", MAX);
+   return 0;
+}
+```
